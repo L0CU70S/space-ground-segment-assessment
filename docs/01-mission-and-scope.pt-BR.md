@@ -104,7 +104,7 @@ O projeto não terá como alvo satélites reais, estações terrestres, organiza
 
 ## Status do documento
 
-- Status: Rascunho / em desenvolvimento
+- Status: Em desenvolvimento
 - Cenário: AuroraWatch-1
 - Ambiente: Laboratório fictício e isolado
 - Tipo de avaliação: Projeto educacional de portfólio
