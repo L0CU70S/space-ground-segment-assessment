@@ -1,81 +1,157 @@
-# AuroraWatch-1 Ground Segment Cybersecurity Assessment
+# Avaliação de Cibersegurança do Segmento Terrestre do AuroraWatch-1
 
-🇧🇷 Português | [🇺🇸 English](../README.md)
+🇧🇷 Português | [🇺🇸 English](./README.md)
 
-Avaliação educacional e fictícia de cibersegurança para o Ground Segment e o Mission Operations Center de uma missão espacial simulada.
+Avaliação educacional e fictícia de cibersegurança do Segmento Terrestre e do Centro de Operações de Missão de uma missão simulada de observação da Terra em órbita baixa (LEO).
 
-## Aviso importante
+## Disclaimer Importante
 
-AuroraWatch-1 é uma missão fictícia criada exclusivamente para fins de estudo, treinamento e portfólio em cibersegurança espacial.
+AuroraWatch-1 é uma missão fictícia criada exclusivamente para estudos, treinamento e portfólio em cibersegurança espacial.
 
-Este projeto não representa um satélite operacional, uma organização, um cliente, uma avaliação real de segurança, um teste de intrusão, uma auditoria de conformidade ou uma arquitetura real de missão.
+Este projeto não representa um satélite operacional, organização, cliente, avaliação real de segurança, teste de intrusão, auditoria de conformidade ou arquitetura de missão real.
 
-O projeto não possui afiliação com NIST, SPARTA, The Aerospace Corporation, CCSDS, NASA, ESA, AEB ou qualquer outra organização mencionada nas referências.
+Este projeto não possui afiliação com NIST, SPARTA, The Aerospace Corporation, CCSDS, NASA, ESA, AEB ou qualquer outra organização mencionada nas referências.
 
-Nenhum teste é realizado contra sistemas reais, infraestruturas de terceiros ou ambientes de produção.
+Nenhum teste é realizado contra sistemas reais, infraestrutura de terceiros ou ambientes de produção.
 
 ## Objetivo
 
 Este projeto aplica referências públicas de cibersegurança a uma missão espacial fictícia, com foco em:
 
-- Ground Segment;
-- Mission Operations Center (MOC);
-- estações de operação;
-- interfaces com estações terrestres;
+- Segmento Terrestre;
+- Centro de Operações de Missão (MOC);
+- estações de trabalho de operadores;
+- interfaces de estações terrestres;
 - controle de acesso de operadores e administradores;
-- fluxos de telemetria e telecomando;
+- fluxos de telemetria e telecomandos;
 - dependências de terceiros;
 - modelagem de ameaças;
 - avaliação de riscos;
 - monitoramento, detecção e resposta a incidentes.
 
-O objetivo é conectar conceitos de Blue Team, DFIR, segurança de ambientes críticos, OT/ICS e operações espaciais em um cenário reproduzível e seguro.
+O objetivo é conectar conceitos de Blue Team, DFIR, segurança de ambientes críticos, OT/ICS e operações espaciais em um cenário seguro, reproduzível e educacional.
 
-## Escopo inicial
+## Escopo Atual
 
-O escopo inicial contempla:
+O escopo atual inclui:
 
-- Estações de trabalho de operadores;
-- sistemas do Mission Operations Center;
+- estações de trabalho de operadores;
+- sistemas do Centro de Operações de Missão;
+- servidores de controle da missão;
 - processamento de telemetria;
-- fluxo de telecomandos;
-- gateway de estação terrestre;
+- armazenamento de dados da missão e telemetria;
+- fluxos de telecomandos;
+- gateway da estação terrestre;
 - identidade, autenticação e acesso privilegiado;
-- monitoramento e registros de segurança;
-- dependências de um provedor fictício de estação terrestre;
-- simulador de satélite.
+- monitoramento, logging e alertas de segurança;
+- interface de um provedor fictício de estação terrestre;
+- simulação de satélite;
+- serviços de linha de base de configuração;
+- serviços de backup e recuperação;
+- sincronização de tempo;
+- controles de segurança de rede;
+- eventos, logs, alertas e evidências sintéticas gerados no laboratório isolado.
 
-Os detalhes do escopo estão documentados em [`docs/01-mission-and-scope.md`](docs/01-mission-and-scope.md).
+As informações detalhadas de escopo estão documentadas em [docs/01-mission-and-scope.pt-BR.md](./docs/01-mission-and-scope.pt-BR.md).
 
-## Metodologia de estudo
+## Visão Geral da Arquitetura
 
-O assessment será desenvolvido progressivamente:
+A arquitetura lógica atual está disponível em vários formatos:
 
-1. Definição da missão e do escopo;
-2. modelagem da arquitetura;
-3. inventário de ativos;
-4. identificação de fluxos de dados e fronteiras de confiança;
-5. seleção de ameaças relevantes;
-6. registro e priorização de riscos;
-7. mapeamento de controles preventivos e de detecção;
-8. criação de casos de teste autorizados;
-9. análise de logs e evidências;
-10. documentação de resposta e lições aprendidas.
+- [Visão Geral da Arquitetura — PNG](./docs/architecture/architecture%20Overview.png);
+- [Visão Geral da Arquitetura — SVG](./docs/architecture/Architecture%20Overview.svg);
+- [Visão Geral da Arquitetura — JPG em português do Brasil](./docs/architecture/Architecture%20Overview-ptbr.jpg);
+- [Fonte editável do draw.io](./docs/architecture/Architecture%20Overview.drawio).
 
-Os testes práticos, quando implementados, ocorrerão somente em ambiente próprio, isolado e controlado, usando simuladores e serviços fictícios.
+A visão geral mostra as principais zonas, ativos, fluxos de operações de missão, caminhos de telecomandos e telemetria, coleta de eventos de segurança, monitoramento e serviços transversais.
 
-## Referências principais
+## Documentação
+
+### Missão e arquitetura
+
+- [Mission and Scope — English](./docs/01-mission-and-scope.md);
+- [Missão e Escopo — Português](./docs/01-mission-and-scope.pt-BR.md);
+- [System Architecture — English](./docs/02-system-architecture.md);
+- [Arquitetura do Sistema — Português](./docs/02-system-architecture.pt-BR.md).
+
+### Ativos e fluxos
+
+- [Asset Inventory — English](./docs/03-asset-inventory.md);
+- [Inventário de Ativos — Português](./docs/03-asset-inventory.pt-BR.md);
+- [Data Flows and Trust Boundaries — English](./docs/04-data-flows-and-trust-boundaries-en-US.md);
+- [Fluxos de Dados e Limites de Confiança — Português](./docs/04-data-flows-and-trust-boundaries-pt-BR.md).
+
+## Metodologia de Estudo
+
+O projeto está sendo desenvolvido progressivamente:
+
+```text
+Missão e escopo
+        ↓
+Arquitetura do sistema
+        ↓
+Inventário de ativos
+        ↓
+Fluxos de dados e limites de confiança
+        ↓
+Modelagem de ameaças
+        ↓
+Avaliação de riscos
+        ↓
+Requisitos de segurança e mapeamento de controles
+        ↓
+Detecções e evidências
+        ↓
+Playbooks de resposta a incidentes
+        ↓
+Implementação do laboratório isolado
+        ↓
+Casos de teste autorizados
+```
+
+O projeto segue uma abordagem baseada em documentação. Os componentes práticos somente serão implementados depois que o escopo lógico, a arquitetura, os ativos, os fluxos e os riscos forem documentados.
+
+## Status do Projeto
+
+### Concluído
+
+- missão e escopo da avaliação;
+- arquitetura lógica do sistema;
+- inventário de ativos;
+- identificação dos fluxos de dados;
+- documentação dos limites de confiança;
+- diagrama da Visão Geral da Arquitetura;
+- versões da documentação em inglês e português do Brasil.
+
+### Em andamento
+
+- modelo de ameaças;
+- avaliação de riscos;
+- registro inicial de riscos.
+
+### Planejado
+
+- requisitos de segurança;
+- mapeamento de controles preventivos e detectivos;
+- regras de detecção;
+- playbooks de resposta a incidentes;
+- implementação do laboratório isolado;
+- casos de teste autorizados;
+- análise de evidências sintéticas;
+- descobertas, recomendações e lições aprendidas.
+
+## Principais Referências
 
 - SPARTA — Space Attack Research and Tactic Analysis;
 - NIST IR 8270 — Cybersecurity for Commercial Satellite Operations;
 - NIST IR 8401 — Satellite Ground Segment: Applying the Cybersecurity Framework to Satellite Command and Control;
-- NIST SP 800-82r3 — Guide to Operational Technology (OT) Security;
+- NIST SP 800-82r3 — Guide to Operational Technology Security;
 - NIST SP 800-61r3 — Incident Response Recommendations and Considerations;
 - NIST SP 800-30 — Guide for Conducting Risk Assessments;
-- CCSDS — padrões e recomendações públicas para sistemas de dados espaciais;
-- outras referências públicas identificadas em [`references/references.md`](references/references.md).
+- padrões e recomendações públicas do CCSDS para sistemas de dados espaciais;
+- referências públicas adicionais em [references/references.md](./references/references.md).
 
-## Estrutura do projeto
+## Estrutura do Repositório
 
 ```text
 space-ground-segment-assessment/
@@ -83,7 +159,18 @@ space-ground-segment-assessment/
 ├── README.pt-BR.md
 ├── docs/
 │   ├── 01-mission-and-scope.md
-│   └── 02-system-architecture.md
+│   ├── 01-mission-and-scope.pt-BR.md
+│   ├── 02-system-architecture.md
+│   ├── 02-system-architecture.pt-BR.md
+│   ├── 03-asset-inventory.md
+│   ├── 03-asset-inventory.pt-BR.md
+│   ├── 04-data-flows-and-trust-boundaries-en-US.md
+│   ├── 04-data-flows-and-trust-boundaries-pt-BR.md
+│   └── architecture/
+│       ├── Architecture Overview.drawio
+│       ├── Architecture Overview.svg
+│       ├── architecture Overview.png
+│       └── Architecture Overview-ptbr.jpg
 ├── diagrams/
 ├── data/
 ├── detections/
@@ -92,26 +179,16 @@ space-ground-segment-assessment/
 └── references/
 ```
 
-A estrutura será ampliada conforme novos artefatos forem desenvolvidos.
+## Sobre o Autor
 
-## Status
+Este projeto independente é desenvolvido por Igor S. Nascimento como parte de sua jornada de estudos em Cibersegurança Espacial, com foco em Segmento Terrestre, Centro de Operações de Missão, Blue Team, DFIR e segurança de ambientes críticos.
 
-🚧 Em desenvolvimento.
+Mais projetos e recursos:
 
-A primeira etapa do projeto consiste em definir a missão, o escopo e a arquitetura do cenário fictício antes da implementação dos simuladores e dos casos de teste.
-
-## Sobre o autor
-
-Este é um projeto independente desenvolvido por Igor S. Nascimento como parte de sua jornada de estudos em cibersegurança espacial, com foco em Ground Segment, Mission Operations Center, Blue Team, DFIR e segurança de ambientes críticos.
-
-Mais projetos e materiais:
-
-- [CEE Orbital](https://l0cu70s.github.io/cee-orbital/)
-- [Perfil e portfólio no GitHub](https://github.com/L0CU70S)
-- [Guia de estudos SPARTA PT-BR](https://github.com/L0CU70S/sparta-ptbr-study-guide)
+- [CEE Orbital](https://l0cu70s.github.io/cee-orbital/);
+- [Perfil e portfólio no GitHub](https://github.com/L0CU70S);
+- [Guia de Estudos SPARTA PT-BR](https://github.com/L0CU70S/sparta-ptbr-study-guide).
 
 ## Licença
 
-O código, os textos e os artefatos deste repositório são disponibilizados para fins educacionais. Consulte o arquivo [`LICENSE`](../LICENSE), quando disponível, para obter os termos aplicáveis.
-
-> Aprender, modelar, testar com responsabilidade, documentar e compartilhar.
+O código, os textos e os artefatos deste repositório são fornecidos para fins educacionais. Consulte [LICENSE](./LICENSE), quando disponível, para conhecer os termos aplicáveis.
